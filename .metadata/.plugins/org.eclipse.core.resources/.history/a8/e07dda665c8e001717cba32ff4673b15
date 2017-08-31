@@ -1,0 +1,8 @@
+package main.java.com.chinasofti.entity;
+
+public class student {
+	private int sno;
+	private String name;
+	private int age;
+
+}

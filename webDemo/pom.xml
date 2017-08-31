@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>chinasofti</groupId>
+  <artifactId>Toskyup</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Demo</name>
+  <description>a maven demo</description>
+  <dependencies>
+  	<!-- spring IOC 功能  -->
+  	 <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.2.8.RELEASE</version>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.8.2</version>
+	    <!-- scope：test 在开发的环境下使用，生产环境下，不会将该jar放入进去 -->
+	    <scope>test</scope>
+	</dependency>
+    
+    
+  </dependencies>
+  
+  
+  <!-- build 设置构建项目的信息 -->
+  <build>
+    <plugins>
+   		<!-- 编译java文件的插件 -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+      </plugin>
+      <!-- 通过maven集成tomact插件  部署项目的时候会直接在当前项目工程位置  临时构建一个tomcat目录来
+      	存放 -->
+      <plugin>
+      	<groupId>org.apache.tomcat.maven</groupId>
+	    <artifactId>tomcat7-maven-plugin</artifactId>
+	    <version>2.2</version>
+	   <!-- 设置tomcat的配置信息 -->
+	    <configuration>
+	    <!-- 设置集成的tomcat 的端口号 -->
+	    	<port>8080</port>
+	    	<!-- 设置部署到集成tomact下的应用的路径名 -->
+	    	<path>/</path>
+	    </configuration>
+      </plugin>
+      
+    </plugins>
+  </build>
+</project>

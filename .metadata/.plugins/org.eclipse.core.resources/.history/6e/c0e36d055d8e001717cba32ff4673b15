@@ -1,0 +1,11 @@
+package test.java;
+
+import main.java.com.chinasofti.entity.Student;
+
+public class TestStudent {
+	public void testConstructor()
+	{
+		Student student = new Student();
+	}
+
+}
